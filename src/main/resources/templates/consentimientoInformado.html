@@ -1,0 +1,106 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <title>Documento</title>
+  <meta http-equiv="Content-Type" content="application/json" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link
+          href="http://fonts.googleapis.com/css?family=Roboto"
+          rel="stylesheet"
+          type="text/css"
+  />
+  <style>
+      body {
+        font-family: "Roboto", sans-serif;
+      }
+
+      .pacienteInfo tr td {
+      }
+
+      .procedimientos tr td {
+      }
+
+      .signature tr td {
+      }
+    </style>
+</head>
+<body>
+<table>
+  <tr>
+    <td>
+      <table>
+        <tbody>
+        <tr width="520">
+          <td width="107" id="x_logo">
+            <img
+                    data-imagetype="External"
+                    src="https://tramisalud.com/images/imgpara/Logo.png"
+                    alt="Logo Image"
+                    width="90"
+                    height="auto"
+            />
+          <td>
+            <p th:text="|Fecha:   ${fechaFirma}|"></p>
+          </td>
+          </td>
+        </tr>
+        </tbody>
+      </table>
+    </td>
+  </tr>
+</table>
+<br/>
+<v-row class="justify-center align-center">
+  <v-col cols="12" sm="8">
+    <v-card>
+      <v-card-title primary-title class="justify-center">
+        <h3 style="text-align: center;">
+          CONSENTIMIENTO INFORMADO PARA RECIBIR SERVICIOS DE SALUD EN TRAMISALUD
+        </h3>
+      </v-card-title>
+      <v-card-text class="justify">
+        <p class="text-justify">
+          Yo <strong th:text="${nombreCompleto}"/>, identificado (a) con cedula de ciudadanía <strong th:text="${documentoIdentidad}"/>,
+          en pleno uso de mis facultades, comprendo y certifico que me explicaron en que consistente
+          la atención en salud por medio de la consulta.
+        </p>
+        <h4 class="text-justify"><strong>Manejo de la privacidad y confidencialidad y riesgos de violaciones de la confidencialidad:</strong></h4>
+        <p class="text-justify">
+        <ul>
+          <li>La información a la cual tenga acceso Tramisalud  . en la prestación del servicio de salud a través de la plataforma tecnológica, será tratada conforme a altos estándares de Privacidad y Confidencialidad, conforme a los protocolos definidos en la institución, e informará al paciente cualquier sospecha, pérdida, fuga o violación a la seguridad que pueda afectar la información personal que se tenga en custodia como consecuencia de la prestación del servicio.</li>
+        </ul>
+        <h4 class="text-justify"><strong>Al aceptar este consentimiento, entiendo lo siguiente:</strong></h4>
+        <ul>
+          <li>
+            Certifico que he leído y entiendo la información provista arriba relacionada al uso de la telemedicina.
+          </li>
+          <li>
+            He leído el documento cuidadosamente y entiendo los riesgos y beneficios relacionados al uso de la TELECONSULTA.
+          </li>
+          <li>
+            Doy mi consentimiento para que el profesional de la salud trate mis datos personales y/o los del paciente que represento, de forma confidencial y segura, conforme a la ley 1581 de 2012 y demás decretos reglamentarios y la Política de Protección de Datos de Tramisalud  , la cual me dieron a conocer en el momento solicitar la autorización para el tratamiento de mis datos personales al inicio de este documento.
+          </li>
+        </ul>
+        </p>
+      </v-card-text>
+    </v-card>
+  </v-col>
+</v-row>
+<table width="100%" class="signature" style="border-collapse: collapse;">
+  <tr width="520">
+    <td width="107" id="x_firma">
+      <img th:src="@{${imagen}}"
+           style="margin-left: -85px;"
+           data-imagetype="External"
+           width="auto"
+           height="auto"
+      />
+    </td>
+  </tr>
+  <tr>
+    <td width="20%">Firma Paciente</td>
+  </tr>
+</table>
+
+</body>
+</html>
